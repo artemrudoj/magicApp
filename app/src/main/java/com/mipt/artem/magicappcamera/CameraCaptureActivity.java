@@ -8,8 +8,6 @@ import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.mipt.artem.magicappcamera.gles.CameraRenderer;
-
 import java.io.IOException;
 
 

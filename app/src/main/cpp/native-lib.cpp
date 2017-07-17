@@ -59,10 +59,9 @@ int uTexMatrixLoc;
 int aPositionLoc;
 int aTextureCoordLoc;
 
-
 extern "C" {
     JNIEXPORT jint JNICALL
-    Java_com_mipt_artem_magicappcamera_gles_CameraRenderer_createTextureObject(JNIEnv *env, jobject instance) {
+    Java_com_mipt_artem_magicappcamera_CameraRenderer_createTextureObject(JNIEnv *env, jobject instance) {
             GLuint textures;
             glGenTextures(1, &textures);
             glBindTexture(GL_TEXTURE_EXTERNAL_OES, textures);
@@ -72,7 +71,7 @@ extern "C" {
         }
 
     JNIEXPORT void JNICALL
-    Java_com_mipt_artem_magicappcamera_gles_CameraRenderer_init(JNIEnv *env, jobject instance) {
+    Java_com_mipt_artem_magicappcamera_CameraRenderer_init(JNIEnv *env, jobject instance) {
         programHandle = createProgram(gVertexShader, gFragmentShader);
         aPositionLoc = glGetAttribLocation(programHandle, "aPosition");
         aTextureCoordLoc = glGetAttribLocation(programHandle, "aTextureCoord");
@@ -81,14 +80,15 @@ extern "C" {
     }
 
     JNIEXPORT void JNICALL
-    Java_com_mipt_artem_magicappcamera_gles_CameraRenderer_release(JNIEnv *env, jobject instance) {
+    Java_com_mipt_artem_magicappcamera_CameraRenderer_release(JNIEnv *env, jobject instance) {
         glDeleteProgram(programHandle);
     }
 
     JNIEXPORT void JNICALL
-    Java_com_mipt_artem_magicappcamera_gles_CameraRenderer_drawNative(JNIEnv *env, jobject instance,
+    Java_com_mipt_artem_magicappcamera_CameraRenderer_drawNative(JNIEnv *env, jobject instance,
                                                                         jfloatArray texMatrix_) {
         jfloat *texMatrix = env->GetFloatArrayElements(texMatrix_, NULL);
+
         glUseProgram(programHandle);
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_EXTERNAL_OES, textureId);
