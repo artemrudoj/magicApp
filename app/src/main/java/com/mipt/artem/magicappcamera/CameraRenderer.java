@@ -3,8 +3,6 @@ package com.mipt.artem.magicappcamera;
 import android.graphics.SurfaceTexture;
 import android.opengl.GLSurfaceView;
 
-import com.mipt.artem.magicappcamera.OnSurfaceTextureReadyListener;
-
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
