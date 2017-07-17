@@ -48,10 +48,10 @@ float FULL_RECTANGLE_TEX_COORDS[] = {
         1.0f, 1.0f
 };
 
-int coordsPerVertex = 2;
-int vertexStride = coordsPerVertex * sizeof(GLfloat);
-int vertexCount = 4;
-int texCoordStride = 8;
+const int coordsPerVertex = 2;
+const int vertexStride = coordsPerVertex * sizeof(GLfloat);
+const int vertexCount = 4;
+const int texCoordStride = coordsPerVertex * sizeof(GLfloat);
 int programHandle;
 int textureId;
 int uMVPMatrixLoc;
